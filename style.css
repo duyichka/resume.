@@ -1,0 +1,109 @@
+/* Полотно макета: 820 × 1160 px (як у Figma). Усі елементи позиціонуються абсолютно. */
+:root {
+  --black: #1e1e1e;
+  --ink: #000;
+  --gray-bg: #efefef;
+  --gray-text: #8a8a8a;
+  --bar: #d9d9d9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { background: #e4e4e4; font-family: "Open Sans", Arial, sans-serif; }
+
+.stage { width: 820px; height: 1160px; margin: 0 auto; transform-origin: top left; }
+
+.page {
+  position: relative;
+  width: 820px;
+  height: 1160px;
+  background: #fff;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.page > *, .about > * { position: absolute; }
+
+/* ---------- Фото ---------- */
+.photo { left: 54px; top: 54px; width: 348px; height: 519px; object-fit: cover; object-position: center top; }
+
+/* ---------- Шапка ---------- */
+.label-resume { left: 435px; top: 57px; font-size: 14px; font-weight: 400; letter-spacing: .3px; }
+.name-first   { left: 441px; top: 92px; font-size: 48px; line-height: 64px; font-weight: 800; }
+.gray-box     { left: 408px; top: 155px; width: 355px; height: 234px; background: var(--gray-bg); }
+.name-last    { left: 442px; top: 158px; font-size: 48px; line-height: 64px; font-weight: 400; }
+.profession   { left: 441px; top: 224px; font-size: 22px; line-height: 30px; font-weight: 300; font-style: italic; }
+.intro        { left: 441px; top: 255px; width: 325px; font-size: 12px; line-height: 22px; font-weight: 400; }
+.hr-line      { left: 593px; top: 338px; width: 148px; height: 2px; background: #000; }
+.square       { width: 11px; height: 11px; background: #000; }
+.sq-head      { left: 730px; top: 356px; }
+
+/* ---------- Вертикальні заголовки та лінії ---------- */
+.vtitle {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.vline { width: 1.5px; background: #000; }
+
+/* Контакти */
+.vt-contacts { left: 422px; top: 410px; font-size: 14px; }
+.vl-contacts { left: 443px; top: 410px; height: 140px; }
+.contacts { left: 466px; top: 405px; list-style: none; font-size: 14px; letter-spacing: 2.2px; }
+.contacts li { height: 28.5px; line-height: 28px; }
+.contacts a { color: inherit; text-decoration: none; }
+
+/* ---------- Про мене ---------- */
+.about { position: absolute; left: 54px; top: 594px; width: 709px; height: 179px; background: var(--black); color: #fff; }
+.vt-about { left: 19px; top: 21px; font-size: 14px; color: #fff; }
+.vl-about { left: 42px; top: 21px; height: 138px; width: 1px; background: #777; }
+.about-1, .about-2 { left: 64px; width: 625px; font-size: 11.5px; line-height: 18px; font-weight: 600; font-style: italic; }
+.about-1 { top: 28px; }
+.about-2 { top: 111px; }
+.sq-about { left: 676px; top: 152px; background: #fff; }
+
+/* ---------- Нижній ряд ---------- */
+.vt-exp    { left: 55px;  top: 795px; }
+.vl-exp    { left: 78px;  top: 795px; height: 305px; }
+.vt-edu    { left: 371px; top: 795px; }
+.vl-edu    { left: 393px; top: 795px; height: 212px; }
+.vt-skills { left: 606px; top: 797px; }
+.vl-skills { left: 628px; top: 797px; height: 293px; }
+
+/* Досвід */
+.job { left: 95px; width: 260px; }
+.job h3 { font-size: 14.5px; line-height: 20px; font-weight: 600; letter-spacing: .2px; }
+.job .role { margin: 1px 0 0 35px; width: 215px; font-size: 12px; line-height: 16px; font-weight: 400; }
+.job .desc, .edu .desc { margin-top: 6px; margin-left: 5px; font-size: 10px; line-height: 14.5px; font-weight: 700; font-style: italic; color: var(--gray-text); }
+.j1 { top: 794px; }
+.j2 { top: 924px; }
+.j3 { top: 1026px; }
+.j2 .role { margin-left: 37px; }
+.j3 .role { margin-left: 36px; }
+
+/* Освіта */
+.edu { left: 410px; top: 795px; width: 180px; }
+.edu h3 { font-size: 15px; line-height: 23px; font-weight: 600; }
+.edu .desc { margin-left: 0; margin-top: 6px; }
+
+/* Навички */
+.skills { left: 651px; top: 795px; width: 112px; list-style: none; }
+.skills li { position: absolute; left: 0; width: 112px; }
+.skills span { display: block; font-size: 15px; line-height: 23px; font-weight: 600; }
+.skills i { display: block; margin-top: 13px; width: 110px; height: 5px; background: linear-gradient(to right, var(--bar) calc(100% - var(--fill)), #000 calc(100% - var(--fill))); }
+.s1 { top: 0; }
+.s2 { top: 66px; }
+.s3 { top: 154px; }
+.s4 { top: 245px; }
+
+/* ---------- Друк ---------- */
+@page { size: 820px 1160px; margin: 0; }
+@media print {
+  html, body { background: #fff; }
+  .stage { transform: none !important; margin: 0; height: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
